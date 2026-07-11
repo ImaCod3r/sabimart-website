@@ -1,3 +1,4 @@
+import { GraduationCap, MessageCircle } from "lucide-react";
 import bg from "../assets/bg.png";
 import Button from "./Button";
 
@@ -19,8 +20,14 @@ function Hero() {
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-                    <Button href="#contactos">Entre em contacto</Button>
-                    <Button href="#centro-de-formacao" variant="secondary">
+                    <Button href="#contactos" icon={<MessageCircle className="size-5" />}>
+                        Entre em contacto
+                    </Button>
+                    <Button
+                        href="#centro-de-formacao"
+                        variant="secondary"
+                        icon={<GraduationCap className="size-5" />}
+                    >
                         Conheça nossos serviços
                     </Button>
                 </div>
