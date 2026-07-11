@@ -1,6 +1,7 @@
-import { GraduationCap, MessageCircle } from "lucide-react";
+import { ArrowDown, GraduationCap, MessageCircle } from "lucide-react";
 import bg from "../assets/bg.png";
 import Button from "./Button";
+import TypewriterText from "./TypewriterText";
 
 function Hero() {
     return (
@@ -13,7 +14,7 @@ function Hero() {
 
             <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
                 <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
-                    Soluções tech e capacitação digital em Luanda e Cabinda.
+                    <TypewriterText text="Tech que resolve. Formação que transforma." />
                 </h1>
                 <p className="mt-4 text-lg text-white/90 md:text-xl">
                     Tecnologia e formação para impulsionar o teu negócio.
@@ -31,6 +32,16 @@ function Hero() {
                         Conheça nossos serviços
                     </Button>
                 </div>
+            </div>
+
+            <div className="relative z-10 flex justify-center pb-12">
+                <a
+                    href="#quem-somos"
+                    aria-label="Rolar para a próxima secção"
+                    className="liquid-glass flex size-14 items-center justify-center rounded-full text-white transition-colors hover:bg-white/20"
+                >
+                    <ArrowDown className="size-6" />
+                </a>
             </div>
 
             <div className="relative z-10 bg-white/10 py-10 backdrop-blur-md border-t border-[#9E9E9E]">
