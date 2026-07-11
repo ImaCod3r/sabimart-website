@@ -1,4 +1,5 @@
 import bg from "../assets/bg.png";
+import Button from "./Button";
 
 function Hero() {
     return (
@@ -18,18 +19,10 @@ function Hero() {
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-                    <a
-                        href="#contactos"
-                        className="rounded-full bg-sky-500 px-8 py-3.5 text-white transition-colors hover:bg-sky-400"
-                    >
-                        Entre em contacto
-                    </a>
-                    <a
-                        href="#centro-de-formacao"
-                        className="rounded-full bg-black px-8 py-3.5 text-white transition-colors hover:bg-neutral-800"
-                    >
-                        Conheça nossos cursos
-                    </a>
+                    <Button href="#contactos">Entre em contacto</Button>
+                    <Button href="#centro-de-formacao" variant="secondary">
+                        Conheça nossos serviços
+                    </Button>
                 </div>
             </div>
 
