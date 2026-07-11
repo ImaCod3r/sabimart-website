@@ -10,15 +10,15 @@ interface ButtonProps {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-    primary: "bg-sky-500 hover:bg-sky-400",
-    secondary: "bg-black hover:bg-neutral-800",
+    primary: "bg-gradient-to-b from-sky-400 to-sky-600",
+    secondary: "bg-gradient-to-b from-neutral-700 to-black",
 };
 
 function Button({ href, variant = "primary", icon, children }: ButtonProps) {
     return (
         <a
             href={href}
-            className={`inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 text-white transition-colors ${variantClasses[variant]}`}
+            className={`gel inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 text-white transition hover:brightness-110 ${variantClasses[variant]}`}
         >
             {icon}
             {children}

@@ -16,7 +16,11 @@ function Hero() {
                 <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
                     <TypewriterText text="Tech que resolve. Formação que transforma." />
                 </h1>
-                <p className="mt-4 text-lg text-white/90 md:text-xl">
+
+                {/* Separador entre o título e o subtítulo */}
+                <div className="mt-8 h-px w-full max-w-xl bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+
+                <p className="mt-8 text-lg text-white/90 md:text-xl">
                     Tecnologia e formação para impulsionar o teu negócio.
                 </p>
 
