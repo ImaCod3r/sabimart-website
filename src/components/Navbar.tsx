@@ -15,6 +15,11 @@ function Navbar() {
                         </a>
                     </li>
                     <li>
+                        <a href="#servicos" className="transition-colors hover:text-sky-400">
+                            Serviços
+                        </a>
+                    </li>
+                    <li>
                         <a href="#centro-de-formacao" className="transition-colors hover:text-sky-400">
                             Centro de formação
                         </a>
