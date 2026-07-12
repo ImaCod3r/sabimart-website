@@ -20,13 +20,13 @@ function FinalCta() {
                     investir na sua formação, a Sabimart está pronta para ajudar.
                 </p>
 
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+                <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
                     <Button href="#contactos" icon={<MessageCircle className="size-5" />}>
                         Contactar a Sabimart
                     </Button>
                     <a
                         href="#centro-de-formacao"
-                        className="liquid-glass inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 text-white transition-colors hover:bg-white/20"
+                        className="liquid-glass inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-white transition-colors hover:bg-white/20"
                     >
                         <GraduationCap className="size-5" />
                         Ver Cursos Disponíveis

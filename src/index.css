@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 @utility liquid-glass {
     background-color: rgb(255 255 255 / 0.08);
     backdrop-filter: blur(14px) saturate(180%);

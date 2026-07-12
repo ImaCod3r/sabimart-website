@@ -86,7 +86,7 @@ function TrainingCenter() {
                         pretendam capacitar as suas equipas.
                     </p>
 
-                    <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+                    <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
                         <Button href="#contactos" icon={<GraduationCap className="size-5" />}>
                             Inscreve-te já
                         </Button>

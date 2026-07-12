@@ -12,7 +12,7 @@ function Hero() {
             {/* Overlay escuro sobre a imagem de fundo */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
 
-            <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+            <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10 text-center md:pt-32">
                 <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
                     <TypewriterText text="Tech que resolve. Formação que transforma." />
                 </h1>
@@ -24,7 +24,7 @@ function Hero() {
                     Tecnologia e formação para impulsionar o teu negócio.
                 </p>
 
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+                <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
                     <Button href="#contactos" icon={<MessageCircle className="size-5" />}>
                         Entre em contacto
                     </Button>
