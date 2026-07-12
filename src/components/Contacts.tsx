@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Mail, MessageCircle, Phone } from "lucide-react";
+import Reveal from "./Reveal";
 
 // Ícones de marcas (Facebook, Instagram, LinkedIn) foram removidos do
 // lucide-react, por isso estão recriados aqui como SVGs no mesmo estilo.
@@ -59,7 +60,7 @@ function ContactCard({ icon, title, label, href }: ContactCardProps) {
     return (
         <a
             href={href}
-            className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl"
+            className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl"
         >
             <div className="gel flex size-14 items-center justify-center rounded-full bg-gradient-to-b from-sky-400 to-sky-600 text-white">
                 {icon}
@@ -80,7 +81,7 @@ function Contacts() {
     return (
         <section id="contactos" className="bg-slate-50 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                <div className="mx-auto max-w-3xl text-center">
+                <Reveal className="mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
                         Contactos
                     </h2>
@@ -91,30 +92,36 @@ function Contacts() {
                     <p className="mt-8 text-lg leading-relaxed text-slate-600">
                         Fala connosco pelo canal que preferires.
                     </p>
-                </div>
+                </Reveal>
 
                 <div className="mx-auto mt-16 grid max-w-4xl gap-8 md:grid-cols-3">
-                    <ContactCard
-                        icon={<Phone className="size-7" />}
-                        title="Telefone"
-                        label="+244 928 113 549"
-                        href="tel:+244928113549"
-                    />
-                    <ContactCard
-                        icon={<MessageCircle className="size-7" />}
-                        title="WhatsApp"
-                        label="+244 928 113 549"
-                        href="https://wa.me/244928113549"
-                    />
-                    <ContactCard
-                        icon={<Mail className="size-7" />}
-                        title="Email"
-                        label="geral@sabimart.online"
-                        href="mailto:geral@sabimart.online"
-                    />
+                    <Reveal delay={0}>
+                        <ContactCard
+                            icon={<Phone className="size-7" />}
+                            title="Telefone"
+                            label="+244 928 113 549"
+                            href="tel:+244928113549"
+                        />
+                    </Reveal>
+                    <Reveal delay={100}>
+                        <ContactCard
+                            icon={<MessageCircle className="size-7" />}
+                            title="WhatsApp"
+                            label="+244 928 113 549"
+                            href="https://wa.me/244928113549"
+                        />
+                    </Reveal>
+                    <Reveal delay={200}>
+                        <ContactCard
+                            icon={<Mail className="size-7" />}
+                            title="Email"
+                            label="geral@sabimart.online"
+                            href="mailto:geral@sabimart.online"
+                        />
+                    </Reveal>
                 </div>
 
-                <div className="mt-16 flex items-center justify-center gap-4">
+                <Reveal className="mt-16 flex items-center justify-center gap-4" delay={200}>
                     {socials.map((social) => (
                         <a
                             key={social.name}
@@ -125,7 +132,7 @@ function Contacts() {
                             {social.icon}
                         </a>
                     ))}
-                </div>
+                </Reveal>
             </div>
         </section>
     );

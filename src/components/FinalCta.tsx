@@ -1,5 +1,6 @@
 import { GraduationCap, MessageCircle } from "lucide-react";
 import Button from "./Button";
+import Reveal from "./Reveal";
 
 function FinalCta() {
     return (
@@ -7,7 +8,7 @@ function FinalCta() {
             {/* Brilho suave ao centro para destacar o CTA */}
             <div className="absolute inset-x-0 top-0 mx-auto h-64 max-w-3xl rounded-full bg-sky-500/20 blur-3xl" />
 
-            <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-10">
+            <Reveal className="relative mx-auto max-w-3xl px-6 text-center lg:px-10">
                 <h2 className="text-3xl font-semibold text-white md:text-4xl">
                     Pronto para dar o próximo passo?
                 </h2>
@@ -32,7 +33,7 @@ function FinalCta() {
                         Ver Cursos Disponíveis
                     </a>
                 </div>
-            </div>
+            </Reveal>
         </section>
     );
 }

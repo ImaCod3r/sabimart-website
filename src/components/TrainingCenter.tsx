@@ -13,6 +13,7 @@ import {
     Users,
 } from "lucide-react";
 import Button from "./Button";
+import Reveal from "./Reveal";
 
 interface CourseCardProps {
     icon: ReactNode;
@@ -21,7 +22,7 @@ interface CourseCardProps {
 
 function CourseCard({ icon, children }: CourseCardProps) {
     return (
-        <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl">
+        <div className="flex h-full items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl">
             <div className="gel flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-sky-400 to-sky-600 text-white">
                 {icon}
             </div>
@@ -30,11 +31,22 @@ function CourseCard({ icon, children }: CourseCardProps) {
     );
 }
 
+const courses = [
+    { icon: <MousePointerClick className="size-6" />, name: "Informática na Ótica do Utilizador" },
+    { icon: <Cpu className="size-6" />, name: "Manutenção e Reparação de Computadores" },
+    { icon: <Router className="size-6" />, name: "Redes de Computadores" },
+    { icon: <Palette className="size-6" />, name: "Design Gráfico" },
+    { icon: <FileSpreadsheet className="size-6" />, name: "Ofimática (Word, Excel, PowerPoint)" },
+    { icon: <Terminal className="size-6" />, name: "Introdução à Programação" },
+    { icon: <Megaphone className="size-6" />, name: "Marketing Digital" },
+    { icon: <Calculator className="size-6" />, name: "Contabilidade: do básico ao avançado com Primavera" },
+];
+
 function TrainingCenter() {
     return (
         <section id="centro-de-formacao" className="bg-slate-50 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                <div className="mx-auto max-w-3xl text-center">
+                <Reveal className="mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
                         Centro de Formação Sabimart
                     </h2>
@@ -47,36 +59,17 @@ function TrainingCenter() {
                         tecnologia, preparando alunos para o mercado de trabalho e para os
                         próprios serviços que prestamos.
                     </p>
-                </div>
+                </Reveal>
 
                 <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    <CourseCard icon={<MousePointerClick className="size-6" />}>
-                        Informática na Ótica do Utilizador
-                    </CourseCard>
-                    <CourseCard icon={<Cpu className="size-6" />}>
-                        Manutenção e Reparação de Computadores
-                    </CourseCard>
-                    <CourseCard icon={<Router className="size-6" />}>
-                        Redes de Computadores
-                    </CourseCard>
-                    <CourseCard icon={<Palette className="size-6" />}>
-                        Design Gráfico
-                    </CourseCard>
-                    <CourseCard icon={<FileSpreadsheet className="size-6" />}>
-                        Ofimática (Word, Excel, PowerPoint)
-                    </CourseCard>
-                    <CourseCard icon={<Terminal className="size-6" />}>
-                        Introdução à Programação
-                    </CourseCard>
-                    <CourseCard icon={<Megaphone className="size-6" />}>
-                        Marketing Digital
-                    </CourseCard>
-                    <CourseCard icon={<Calculator className="size-6" />}>
-                        Contabilidade: do básico ao avançado com Primavera
-                    </CourseCard>
+                    {courses.map((course, index) => (
+                        <Reveal key={course.name} delay={(index % 4) * 100}>
+                            <CourseCard icon={course.icon}>{course.name}</CourseCard>
+                        </Reveal>
+                    ))}
                 </div>
 
-                <div className="mx-auto mt-16 max-w-3xl text-center">
+                <Reveal className="mx-auto mt-16 max-w-3xl text-center">
                     <div className="flex items-center justify-center gap-3 text-slate-900">
                         <Users className="size-6 text-sky-600" />
                         <h3 className="text-xl font-semibold">Para quem é</h3>
@@ -98,7 +91,7 @@ function TrainingCenter() {
                             Pede mais informações
                         </Button>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </section>
     );
