@@ -23,7 +23,7 @@ interface CourseCardProps {
 function CourseCard({ icon, children }: CourseCardProps) {
     return (
         <div className="flex h-full items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="gel flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-sky-400 to-sky-600 text-white">
+            <div className="gel flex size-12 shrink-0 items-center justify-center rounded-full bg-linear-to-b from-sky-400 to-sky-600 text-white">
                 {icon}
             </div>
             <h3 className="font-semibold text-slate-900">{children}</h3>
@@ -52,7 +52,7 @@ function TrainingCenter() {
                     </h2>
 
                     {/* Separador entre o título e o texto */}
-                    <div className="mx-auto mt-6 h-px w-full max-w-xs bg-gradient-to-r from-transparent via-sky-500/60 to-transparent" />
+                    <div className="mx-auto mt-6 h-px w-full max-w-xs bg-linear-to-r from-transparent via-sky-500/60 to-transparent" />
 
                     <p className="mt-8 text-lg leading-relaxed text-slate-600">
                         O nosso Centro de Formação oferece cursos práticos nas áreas de

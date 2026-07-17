@@ -19,7 +19,7 @@ function Hero() {
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-20 pb-10 text-center md:pt-28">
         <h1 className="max-w-4xl text-3xl font-semibold leading-tight text-white drop-shadow-sm md:text-5xl">
-          <TypewriterText text="Tech que resolve. Formação que transforma." />
+          <TypewriterText text="Tecnologia que resolve. Formação que transforma." />
         </h1>
 
         {/* Separador entre o título e o subtítulo */}
