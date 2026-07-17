@@ -33,33 +33,55 @@ function Navbar() {
                 {/* Botão hambúrguer, visível apenas em mobile */}
                 <button
                     type="button"
-                    onClick={() => setIsOpen((open) => !open)}
-                    aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+                    onClick={() => setIsOpen(true)}
+                    aria-label="Abrir menu"
                     aria-expanded={isOpen}
-                    className="liquid-glass flex size-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/20 md:hidden"
+                    className="text-white transition-colors hover:text-sky-400 md:hidden"
                 >
-                    {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+                    <Menu className="size-7" />
                 </button>
             </nav>
 
-            {/* Menu mobile */}
-            {isOpen && (
-                <div className="px-6 md:hidden">
-                    <ul className="liquid-glass flex flex-col gap-1 rounded-2xl p-3 text-white">
-                        {links.map((link) => (
-                            <li key={link.href}>
-                                <a
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-white/15 hover:text-sky-400"
-                                >
-                                    {link.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+            {/* Fundo escuro por trás do menu */}
+            <div
+                onClick={() => setIsOpen(false)}
+                aria-hidden="true"
+                className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
+                    isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+                }`}
+            />
+
+            {/* Menu lateral branco, cobrindo toda a altura da tela */}
+            <aside
+                className={`fixed inset-y-0 right-0 z-50 flex w-72 max-w-[80%] flex-col bg-white shadow-2xl transition-transform duration-300 md:hidden ${
+                    isOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+            >
+                <div className="flex items-center justify-end px-6 py-6">
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen(false)}
+                        aria-label="Fechar menu"
+                        className="text-slate-700 transition-colors hover:text-sky-600"
+                    >
+                        <X className="size-6" />
+                    </button>
                 </div>
-            )}
+
+                <ul className="flex flex-col px-4 text-slate-800">
+                    {links.map((link) => (
+                        <li key={link.href}>
+                            <a
+                                href={link.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block rounded-xl px-4 py-3 text-lg transition-colors hover:bg-slate-100 hover:text-sky-600"
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </aside>
         </header>
     );
 }

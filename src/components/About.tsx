@@ -11,7 +11,7 @@ interface CardProps {
 function Card({ icon, title, children }: CardProps) {
     return (
         <div className="flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="gel flex size-14 items-center justify-center rounded-full bg-gradient-to-b from-sky-400 to-sky-600 text-white">
+            <div className="gel flex size-14 items-center justify-center rounded-full bg-linear-to-b from-sky-400 to-sky-600 text-white">
                 {icon}
             </div>
             <h3 className="mt-6 text-xl font-semibold text-slate-900">{title}</h3>
@@ -22,7 +22,7 @@ function Card({ icon, title, children }: CardProps) {
 
 function About() {
     return (
-        <section id="quem-somos" className="bg-gradient-to-b from-sky-50 via-white to-slate-50 py-24">
+        <section id="quem-somos" className="bg-linear-to-b from-white via-slate-50 to-slate-100 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
                 <Reveal className="mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
@@ -30,7 +30,7 @@ function About() {
                     </h2>
 
                     {/* Separador entre o título e o texto */}
-                    <div className="mx-auto mt-6 h-px w-full max-w-xs bg-gradient-to-r from-transparent via-sky-500/60 to-transparent" />
+                    <div className="mx-auto mt-6 h-px w-full max-w-xs bg-linear-to-r from-transparent via-sky-500/60 to-transparent" />
 
                     <p className="mt-8 text-lg leading-relaxed text-slate-600">
                         A Sabimart é uma empresa prestadora de serviços de tecnologia. Além dos
