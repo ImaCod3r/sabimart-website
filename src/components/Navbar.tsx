@@ -20,7 +20,7 @@ function Navbar() {
                 </a>
 
                 {/* Links visíveis apenas em ecrãs médios e maiores */}
-                <ul className="hidden items-center gap-10 text-white md:flex">
+                <ul className="hidden items-center gap-6 text-white md:flex">
                     {links.map((link) => (
                         <li key={link.href}>
                             <a href={link.href} className="transition-colors hover:text-sky-400">

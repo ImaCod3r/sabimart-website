@@ -22,7 +22,7 @@ function Card({ icon, title, children }: CardProps) {
 
 function About() {
     return (
-        <section id="quem-somos" className="bg-slate-50 py-24">
+        <section id="quem-somos" className="bg-gradient-to-b from-sky-50 via-white to-slate-50 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
                 <Reveal className="mx-auto max-w-3xl text-center">
                     <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">

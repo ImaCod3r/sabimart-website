@@ -1,60 +1,38 @@
-import { ArrowDown, GraduationCap, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import bg from "../assets/bg.png";
-import Button from "./Button";
 import TypewriterText from "./TypewriterText";
 
 function Hero() {
     return (
         <section
-            className="relative flex min-h-screen flex-col bg-slate-900 bg-cover bg-center"
-            style={{ backgroundImage: `url(${bg})` }}
+            className="relative flex min-h-screen flex-col bg-sky-300 bg-cover"
+            style={{ backgroundImage: `url(${bg})`, backgroundPosition: "center 30%" }}
         >
-            {/* Overlay escuro sobre a imagem de fundo */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+            {/* Leve escurecimento no topo para dar contraste ao texto e à navegação */}
+            <div className="absolute inset-x-0 top-0 h-2/3 bg-linear-to-b from-sky-500/25 to-transparent" />
 
             <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10 text-center md:pt-32">
-                <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
+                <h1 className="max-w-4xl text-3xl font-semibold leading-[1.1] text-white drop-shadow-sm md:text-5xl">
                     <TypewriterText text="Tech que resolve. Formação que transforma." />
                 </h1>
 
                 {/* Separador entre o título e o subtítulo */}
-                <div className="mt-8 h-px w-full max-w-xl bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-
-                <p className="mt-8 text-lg text-white/90 md:text-xl">
+                <div className="mt-6 h-px w-full max-w-xl bg-linear-to-r from-transparent via-white/60 to-transparent" />
+                <p className="mt-6 text-base text-white drop-shadow-sm md:text-lg">
                     Tecnologia e formação para impulsionar o teu negócio.
                 </p>
 
-                <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
-                    <Button href="#contactos" icon={<MessageCircle className="size-5" />}>
-                        Entre em contacto
-                    </Button>
-                    <Button
-                        href="#centro-de-formacao"
-                        variant="secondary"
-                        icon={<GraduationCap className="size-5" />}
+                <div className="mt-10 flex justify-center">
+                    <a
+                        href="#contactos"
+                        className="gel inline-flex items-center gap-3 rounded-2xl bg-linear-to-br from-blue-500 to-indigo-500 px-8 py-4 text-lg font-medium text-white shadow-xl shadow-indigo-500/30 transition hover:brightness-110"
                     >
-                        Conheça nossos serviços
-                    </Button>
+                        <MessageCircle className="size-5" />
+                        Fale conosco
+                    </a>
                 </div>
             </div>
 
-            <div className="relative z-10 flex justify-center pb-12">
-                <a
-                    href="#quem-somos"
-                    aria-label="Rolar para a próxima secção"
-                    className="liquid-glass flex size-14 items-center justify-center rounded-full text-white transition-colors hover:bg-white/20"
-                >
-                    <ArrowDown className="size-6" />
-                </a>
-            </div>
-
-            <div className="relative z-10 bg-white/10 py-10 backdrop-blur-md border-t border-[#9E9E9E]">
-                <p className="mx-auto max-w-2xl px-6 text-center leading-relaxed text-white">
-                    Somos uma empresa angolana de serviços de tecnologia com centro de formação
-                    próprio em Cabinda. Ajudamos empresas e profissionais a crescer através de
-                    soluções digitais e capacitação técnica de qualidade.
-                </p>
-            </div>
         </section>
     );
 }

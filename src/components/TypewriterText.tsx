@@ -32,7 +32,7 @@ function TypewriterText({ text, speed = 45 }: TypewriterTextProps) {
             </span>
             <span aria-hidden="true" className="absolute inset-0">
                 {text.slice(0, length)}
-                <span className="ml-1 inline-block h-[0.9em] w-[3px] translate-y-[0.12em] animate-caret-blink bg-current" />
+                <span className="ml-1 inline-block h-[0.9em] w-0.75 translate-y-[0.12em] animate-caret-blink bg-current" />
             </span>
         </span>
     );
