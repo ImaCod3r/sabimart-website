@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, animateScroll } from "react-scroll";
 import logo from "../assets/logo.svg";
 
 const links = [
-    { label: "Quem somos", href: "#quem-somos" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Centro de formação", href: "#centro-de-formacao" },
-    { label: "Contactos", href: "#contactos" },
+    { label: "Quem somos", to: "quem-somos" },
+    { label: "Serviços", to: "servicos" },
+    { label: "Centro de formação", to: "centro-de-formacao" },
+    { label: "Contactos", to: "contactos" },
 ];
 
 function Navbar() {
@@ -15,17 +16,28 @@ function Navbar() {
     return (
         <header className="absolute top-0 left-0 z-20 w-full">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:py-8 lg:px-10">
-                <a href="#">
+                <button
+                    type="button"
+                    onClick={() => animateScroll.scrollToTop({ smooth: true, duration: 500 })}
+                    aria-label="Ir para o topo"
+                    className="cursor-pointer"
+                >
                     <img src={logo} alt="Sabimart" className="h-8 w-auto" />
-                </a>
+                </button>
 
                 {/* Links visíveis apenas em ecrãs médios e maiores */}
                 <ul className="hidden items-center gap-6 text-white md:flex">
                     {links.map((link) => (
-                        <li key={link.href}>
-                            <a href={link.href} className="transition-colors hover:text-sky-400">
+                        <li key={link.to}>
+                            <Link
+                                to={link.to}
+                                smooth
+                                duration={500}
+                                offset={-80}
+                                className="cursor-pointer transition-colors hover:text-sky-400"
+                            >
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -70,14 +82,17 @@ function Navbar() {
 
                 <ul className="flex flex-col px-4 text-slate-800">
                     {links.map((link) => (
-                        <li key={link.href}>
-                            <a
-                                href={link.href}
+                        <li key={link.to}>
+                            <Link
+                                to={link.to}
+                                smooth
+                                duration={500}
+                                offset={-80}
                                 onClick={() => setIsOpen(false)}
-                                className="block rounded-xl px-4 py-3 text-lg transition-colors hover:bg-slate-100 hover:text-sky-600"
+                                className="block cursor-pointer rounded-xl px-4 py-3 text-lg transition-colors hover:bg-slate-100 hover:text-sky-600"
                             >
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

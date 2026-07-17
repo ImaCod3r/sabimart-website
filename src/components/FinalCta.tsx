@@ -1,4 +1,5 @@
 import { GraduationCap, MessageCircle } from "lucide-react";
+import { Link } from "react-scroll";
 import Button from "./Button";
 import Reveal from "./Reveal";
 
@@ -25,13 +26,16 @@ function FinalCta() {
                     <Button href="#contactos" icon={<MessageCircle className="size-5" />}>
                         Contactar a Sabimart
                     </Button>
-                    <a
-                        href="#centro-de-formacao"
-                        className="liquid-glass inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-white transition-colors hover:bg-white/20"
+                    <Link
+                        to="centro-de-formacao"
+                        smooth
+                        duration={500}
+                        offset={-80}
+                        className="liquid-glass inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-white transition-colors hover:bg-white/20"
                     >
                         <GraduationCap className="size-5" />
                         Ver Cursos Disponíveis
-                    </a>
+                    </Link>
                 </div>
             </Reveal>
         </section>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-scroll";
 
 type ButtonVariant = "primary" | "secondary";
 
@@ -17,13 +18,16 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 function Button({ href, variant = "primary", icon, className = "", children }: ButtonProps) {
     return (
-        <a
-            href={href}
-            className={`gel inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-white transition hover:brightness-110 ${variantClasses[variant]} ${className}`}
+        <Link
+            to={href.replace(/^#/, "")}
+            smooth
+            duration={500}
+            offset={-80}
+            className={`gel inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-white transition hover:brightness-110 ${variantClasses[variant]} ${className}`}
         >
             {icon}
             {children}
-        </a>
+        </Link>
     );
 }
 

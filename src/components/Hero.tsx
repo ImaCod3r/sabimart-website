@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { Link } from "react-scroll";
 import bg from "../assets/bg.png";
 import TypewriterText from "./TypewriterText";
 
@@ -22,20 +23,33 @@ function Hero() {
         </h1>
 
         {/* Separador entre o título e o subtítulo */}
-        <div className="mt-8 h-px w-full max-w-xl bg-linear-to from-transparent via-white/60 to-transparent" />
+        <div className="mt-6 h-px w-full max-w-xl bg-linear-to-r from-transparent via-white/60 to-transparent" />
 
-        <p className="mt-8 text-base text-white drop-shadow-sm md:text-lg">
+        <p className="mt-6 text-base text-white drop-shadow-sm md:text-lg">
           Tecnologia e formação para impulsionar o teu negócio.
         </p>
 
         <div className="mt-10 flex justify-center">
-          <a
-            href="#contactos"
-            className="gel inline-flex items-center gap-3 rounded-2xl bg-linear-to-br from-blue-500 to-indigo-500 px-8 py-4 text-lg font-medium text-white shadow-xl shadow-indigo-500/30 transition hover:brightness-110"
+          <Link
+            to="contactos"
+            smooth
+            duration={500}
+            offset={-80}
+            className="inline-flex h-11 cursor-pointer flex-row items-center font-medium leading-none text-white transition hover:brightness-110"
+            style={{
+              isolation: "isolate",
+              padding: "10px 20px",
+              gap: "16px",
+              borderRadius: "12px",
+              background:
+                "radial-gradient(101.79% 101.79% at 65.61% 81.79%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(114.65% 114.65% at 9.73% 17.27%, #1E82E0 0%, #1C38EA 100%)",
+              boxShadow:
+                "20px 20px 24px rgba(148, 172, 243, 0.4), inset -3px -3px 4px rgba(191, 229, 251, 0.4), inset 4px 4px 4px rgba(19, 26, 228, 0.1)",
+            }}
           >
-            <MessageCircle className="size-5" />
+            <MessageCircle className="size-5" fill="currentColor" stroke="currentColor" />
             Fale conosco
-          </a>
+          </Link>
         </div>
       </div>
     </section>
